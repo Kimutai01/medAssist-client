@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.bg-image-container-right {
+  /* background: url("{% static 'images/bg-2.svg' %}") no-repeat; */
+  background: url("./assets/bg-2.svg") no-repeat;
+  background-size: contain;
+  background-position: right top;
+}
+
+.bg-image-container-left {
+  /* background: url("{% static 'images/bg-2.svg' %}") no-repeat; */
+  background: url("./assets/bg-2.svg") no-repeat;
+  background-size: contain;
+  background-position: left top;
+}
+
+.bg-image-container-middle {
+  /* background: url("{% static 'images/bg-3.svg' %}") no-repeat; */
+  background: url("./assets/bg-3.svg") no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
