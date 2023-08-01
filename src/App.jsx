@@ -34,6 +34,7 @@ import Introduction from "./components/Introduction";
 import Patient from "./components/Patient";
 import Symptoms from "./components/Symptoms";
 import Results from "./components/Results";
+import Documents from "./components/Documents";
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
         <Route path="/patients" element={<Patient />} />
         <Route path="/symptoms" element={<Symptoms />} />
         <Route path="/results" element={<Results />} />
+        <Route path="/documents" element={<Documents />} />
       </Routes>
       <Footer />
     </>

@@ -124,10 +124,10 @@ const NavBar = () => {
                 </li>
                 <li className="hidden md:flex">
                   <Link
-                    to="/drugs"
+                    to="/documents"
                     className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                   >
-                    Drugs
+                    Documents
                   </Link>
                 </li>
               </>

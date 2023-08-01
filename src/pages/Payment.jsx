@@ -22,7 +22,7 @@ const Payment = () => {
     paymentMethod.preferredLanguage
   );
   const [selectedMedicalInterests, setSelectedMedicalInterests] = useState(
-    paymentMethod.selectedMedicalInterests
+    paymentMethod.selectedMedicalInterests || []
   );
   console.log(selectedMedicalInterests);
 

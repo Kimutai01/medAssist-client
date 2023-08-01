@@ -35,7 +35,7 @@ const Register = () => {
   const user = useSelector(selectUser);
   useEffect(() => {
     if (user) {
-      navigate("/profile");
+      navigate("/personalinfo");
     }
   }, [navigate, redirect, user]);
   return (
