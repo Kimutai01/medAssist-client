@@ -1,18 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileSuccess = () => {
   return (
-    <div className="flex items-center">
+    <div className="flex justify-center items-center px-20">
       <div className="">
-        <h1 className="text-[#000] text-2xl font-bold pt-10 pb-5 ">
+        <h1 className="text-[#13182f] font-extrabold text-5xl  pt-10 pb-5 ">
           Let's get started!
         </h1>
-        <button className="bg-[#ff4d24] text-white rounded-lg px-5 py-2">
-          Check the latest news
-        </button>
-        <button className="bg-[#ff4d24] text-white rounded-lg px-5 py-2">
-          Use the symptom checker
-        </button>
+        <p className="text-[#73729c] text-lg font-medium ">
+          Lorem ipsum dolor sit amet consectetur commodo aliquam augue duis
+          aliquet ipsum donec tempus.
+        </p>
+        <div className="flex gap-10 mt-10">
+          <button className="bg-[#3d65ff] text-white rounded-full px-5 py-2">
+            <Link to="/blogs">Check the latest news</Link>
+          </button>
+          <button className="bg-[#3d65ff] text-white rounded-full px-5 py-2">
+            <Link to="/symptoms">Use the symptom checker</Link>
+          </button>
+        </div>
       </div>
       <div>
         <img

@@ -50,102 +50,102 @@ const PersonalInfo = () => {
     navigate("/interests");
   };
   return (
-    <div className="bg-[#000] pt-28">
+    <div className="bg-[#fff] pt-28">
       <ProfileSteps step1 step2 />
       <ToastContainer />
-      <div className="bg-[#161616] mx-auto w-[30%] px-10 rounded-lg pb-10">
-        <h1 className="text-white text-2xl font-bold pt-10 pb-5 text-center">
+      <div className="bg-[#f3f8ff] mx-auto w-[50%] px-10 rounded-lg mt-10 pb-10">
+        <h1 className="text-[#3d65ff] text-2xl font-bold pt-10 pb-5 text-center">
           Personal Information
         </h1>
         <div className="flex justify-center md:flex-row gap-5 pt-10">
           <div className="flex flex-col w-full">
             <label
               htmlFor="address"
-              className="text-white mb-3 uppercase font-bold"
+              className="text-[#13182f] mb-3  text-xl font-bold"
               type="text"
             >
               Full name
-              <input
-                type="text"
-                id="address"
-                required
-                name="address"
-                value={name || ""}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your name.."
-                className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
-              />
             </label>
+            <input
+              type="text"
+              id="address"
+              required
+              name="address"
+              value={name || ""}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name.."
+              className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
+            />
           </div>
         </div>
         <div className="flex justify-center md:flex-row gap-5 pt-10">
           <div className="flex flex-col w-full">
             <label
               htmlFor="clinic"
-              className="text-white mb-3 uppercase font-bold"
+              className="text-[#13182f] mb-3  text-xl font-bold"
             >
               Clinic
-              <input
-                type="text"
-                required
-                id="city"
-                name="city"
-                value={clinic || ""}
-                onChange={(e) => setClicic(e.target.value)}
-                placeholder="Your city.."
-                className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
-              />
             </label>
+            <input
+              type="text"
+              required
+              id="city"
+              name="city"
+              value={clinic || ""}
+              onChange={(e) => setClicic(e.target.value)}
+              placeholder="Your city.."
+              className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
+            />
           </div>
         </div>
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <label
               htmlFor="medicalSpecialty"
-              className="text-white mb-3 uppercase font-bold"
+              className="text-[#13182f] mb-3  text-xl font-bold"
             >
               Medical Specialty
-              <select
-                id="medicalSpecialty"
-                name="medicalSpecialty"
-                value={medicalSpecialty}
-                onChange={handleMedicalSpecialtyChange}
-                className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
-                required
-              >
-                <option value="">Select a medical specialty</option>
-                {medicalSpecialties.map((specialty) => (
-                  <option key={specialty} value={specialty}>
-                    {specialty}
-                  </option>
-                ))}
-              </select>
             </label>
+            <select
+              id="medicalSpecialty"
+              name="medicalSpecialty"
+              value={medicalSpecialty}
+              onChange={handleMedicalSpecialtyChange}
+              className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
+              required
+            >
+              <option value="">Select a medical specialty</option>
+              {medicalSpecialties.map((specialty) => (
+                <option key={specialty} value={specialty}>
+                  {specialty}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <label
               htmlFor="country"
-              className="text-white mb-3 uppercase font-bold"
+              className="text-[#13182f] mb-3  text-xl font-bold"
             >
               Country
-              <input
-                type="text"
-                required
-                id="country"
-                name="country"
-                value={country || ""}
-                onChange={(e) => setCountry(e.target.value)}
-                placeholder="Your country.."
-                className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
-              />
             </label>
+            <input
+              type="text"
+              required
+              id="country"
+              name="country"
+              value={country || ""}
+              onChange={(e) => setCountry(e.target.value)}
+              placeholder="Your country.."
+              className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
+            />
           </div>
         </div>
 
         <button
-          className="why-btn  w-full mt-10 mb-10 "
+          className="w-full mt-10 mb-10 bg-[#3d65ff] text-[#fff] rounded-full py-3 px-5 font-bold h-16 hover:transform hover:scale-105 transition duration-300 ease-in-out"
           type="submit"
           onClick={(e) => submitHandler(e)}
         >

@@ -28,7 +28,7 @@ const NavBar = () => {
       setNavBg("#131830");
       setLinkColor("#ffffff");
     } else {
-      setNavBg("#ecf0f3");
+      setNavBg("#ffffff");
       setLinkColor("#1f2937");
     }
   }, [location.pathname]);
@@ -99,7 +99,7 @@ const NavBar = () => {
             <li className="hidden md:flex">
               <Link
                 to="/blogs"
-                className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
               >
                 Blogs
               </Link>
@@ -107,7 +107,7 @@ const NavBar = () => {
             <li className="hidden md:flex">
               <Link
                 to="/newss"
-                className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
               >
                 News
               </Link>
@@ -117,7 +117,7 @@ const NavBar = () => {
                 <li className="hidden md:flex">
                   <Link
                     to="/symptoms"
-                    className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                    className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                   >
                     Symptom Checker
                   </Link>
@@ -125,7 +125,7 @@ const NavBar = () => {
                 <li className="hidden md:flex">
                   <Link
                     to="/drugs"
-                    className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                    className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                   >
                     Drugs
                   </Link>
@@ -136,24 +136,24 @@ const NavBar = () => {
           <ul className="hidden md:flex" style={{ color: `${linkColor}` }}>
             {user && user.isAdmin && (
               <div className="group ml-10">
-                <li className="font-medium  text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black ">
+                <li className="font-medium  text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black ">
                   Admin
                   <div className="opacity-0 group-hover:opacity-100 w-[200px] absolute left-0 top-full bg-[#000] pt-10 py-2 rounded-lg shadow-lg">
                     <ul className="p-2 flex flex-col">
                       <Link
                         to="/admin/userlist"
-                        className="text-white py-1 px-2 relative hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                        className="text-white py-1 px-2 relative hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                       >
                         Users
                       </Link>
                       <Link to="/admin/products">
-                        <div className="text-[#fff] py-1 px-2 hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black">
+                        <div className="text-[#fff] py-1 px-2 hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black">
                           Products
                         </div>
                       </Link>
 
                       <Link to="/admin/orderlist">
-                        <div className="text-[#fff] py-1 px-2 hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black">
+                        <div className="text-[#fff] py-1 px-2 hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black">
                           Orders
                         </div>
                       </Link>
@@ -174,18 +174,18 @@ const NavBar = () => {
             />
             {user ? (
               <div className="group ml-10">
-                <li className="font-medium  text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black ">
+                <li className="font-medium  text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black ">
                   {user.name}
                   <div className="opacity-0 group-hover:opacity-100 w-[200px] absolute left-0 top-full bg-[#000] pt-10 py-2 rounded-lg shadow-lg">
                     <ul className="p-2 flex flex-col">
                       <Link
                         to="/profile"
-                        className="text-white py-1 px-2 relative hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                        className="text-white py-1 px-2 relative hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                       >
                         Profile
                       </Link>
                       <div
-                        className="text-[#fff] py-1 px-2 hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                        className="text-[#fff] py-1 px-2 hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                         onClick={logoutHandler}
                       >
                         Logout
@@ -205,18 +205,24 @@ const NavBar = () => {
           <div className="flex">
             {user ? (
               <div className="group ml-10">
-                <li className="font-medium  text-xl text-white mt-[10px] hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black list-none">
+                <li
+                  className={`font-medium  text-xl  mt-[10px] hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black list-none ${
+                    location.pathname === "/blogs"
+                      ? "text-[#fff]"
+                      : "text-[#000]"
+                  }`}
+                >
                   {user.name}
                   <div className="opacity-0 group-hover:opacity-100 w-[200px] absolute left-0 top-full bg-[#000] pt-10 py-2 rounded-lg shadow-lg">
                     <ul className="p-2 flex flex-col">
                       <Link
                         to="/profile"
-                        className="text-white py-1 px-2 relative hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                        className="text-white py-1 px-2 relative hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                       >
                         Profile
                       </Link>
                       <div
-                        className="text-[#fff] py-1 px-2 hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black cursor-pointer"
+                        className="text-[#fff] py-1 px-2 hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black cursor-pointer"
                         onClick={logoutHandler}
                       >
                         Logout
