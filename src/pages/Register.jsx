@@ -35,13 +35,13 @@ const Register = () => {
   const user = useSelector(selectUser);
   useEffect(() => {
     if (user) {
-      navigate(redirect);
+      navigate("/profile");
     }
   }, [navigate, redirect, user]);
   return (
     <div className="bg-[#fff] pt-28">
       {message && <ToastContainer />}
-      <div className="bg-[#f3f8ff] mx-auto w-[30%] px-10 rounded-lg pb-10">
+      <div className="bg-[#f3f8ff] mx-auto w-[85%] md:w-[50%] px-10 rounded-lg pb-10">
         <div className="flex justify-center md:flex-row gap-5 pt-10">
           <div className="flex flex-col w-full">
             <label

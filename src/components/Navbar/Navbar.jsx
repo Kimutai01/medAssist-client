@@ -24,10 +24,14 @@ const NavBar = () => {
   const [linkColor, setLinkColor] = useState("#1f2937");
 
   useEffect(() => {
-    setNavBg("#f7faff");
-    setLinkColor("text-gray-600");
-  }, []);
-
+    if (location.pathname === "/blogs") {
+      setNavBg("#131830");
+      setLinkColor("#ffffff");
+    } else {
+      setNavBg("#ecf0f3");
+      setLinkColor("#1f2937");
+    }
+  }, [location.pathname]);
   useEffect(() => {
     const handleShadow = () => {
       if (window.scrollY >= 90) {
@@ -77,11 +81,58 @@ const NavBar = () => {
     >
       <div className="flex justify-between items-center w-full h-full md:px-4 py-4 px-2 2xl:px-16 rounded">
         <div className="animate-pulse">
-          <Link className="text-[#000] font-bold text-3xl" to="/">
+          <Link
+            className={`text-[#000] font-bold text-3xl ${
+              location.pathname === "/blogs" ? "text-white" : linkColor
+            }`}
+            to="/"
+          >
             MedAssist
           </Link>
         </div>
         <div>
+          <ul
+            className={`flex items-center gap-5 ${
+              location.pathname === "/blogs" ? "text-white" : linkColor
+            }`}
+          >
+            <li className="hidden md:flex">
+              <Link
+                to="/blogs"
+                className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+              >
+                Blogs
+              </Link>
+            </li>
+            <li className="hidden md:flex">
+              <Link
+                to="/newss"
+                className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+              >
+                News
+              </Link>
+            </li>
+            {user && (
+              <>
+                <li className="hidden md:flex">
+                  <Link
+                    to="/symptoms"
+                    className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                  >
+                    Symptom Checker
+                  </Link>
+                </li>
+                <li className="hidden md:flex">
+                  <Link
+                    to="/drugs"
+                    className=" font-medium text-xl hover:text-[#ff4d23] hover:scale-105 transition-all duration-all hover:border-y-black"
+                  >
+                    Drugs
+                  </Link>
+                </li>
+              </>
+            )}
+          </ul>
           <ul className="hidden md:flex" style={{ color: `${linkColor}` }}>
             {user && user.isAdmin && (
               <div className="group ml-10">

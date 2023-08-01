@@ -24,7 +24,12 @@ import NewsEdit from "./pages/NewsEdit";
 import AdvertList from "./components/advertsList";
 import AdvertEdit from "./pages/AdvertEdit";
 import NewsDetail from "./pages/NewsDetail";
-import NewsPage from "./pages/NewsPage";
+
+import Interests from "./components/Interests";
+import PersonalInfo from "./pages/Shipping";
+import ProfileSuccess from "./pages/ProfileSuccess";
+
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -33,14 +38,15 @@ function App() {
       <Routes>
         <Route path="/shop" element={<HomeShop />} />
         <Route path="/" element={<Home />} />
+        <Route path="/success" element={<ProfileSuccess />} />
 
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart/:id?" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/shipping" element={<Shipping />} />
-        <Route path="/payment" element={<Payment />} />
+        <Route path="/personalinfo" element={<PersonalInfo />} />
+        <Route path="/interests" element={<Payment />} />
         <Route path="/placeorder" element={<PlaceOrder />} />
         <Route path="/order/:id" element={<Order />} />
         <Route path="/admin/userlist" element={<UsersList />} />
@@ -53,7 +59,7 @@ function App() {
         <Route path="/admin/adverts" element={<AdvertList />} />
         <Route path="/admin/adverts/:id/edit" element={<AdvertEdit />} />
         <Route path="/news/:id" element={<NewsDetail />} />
-        <Route path="/news" element={<NewsPage />} />
+        <Route path="/blogs" element={<Blog />} />
       </Routes>
       <Footer />
     </>

@@ -1,9 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { loginSuccess } from './userSlice';
+import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+import { loginSuccess } from "./userSlice";
+const personalInfoFromStorage = localStorage.getItem("personalInfo");
 
 const initialState = {
   userDetails: {},
+  personalInfo: personalInfoFromStorage
+    ? JSON.parse(shippingAddressFromStorage)
+    : {},
 };
 
 export const getUserDetails = (id) => async (dispatch, getState) => {
@@ -15,18 +19,18 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
     const { data } = await axios.get(
       `http://127.0.0.1:8000/api/users/${id}/`,
-      config,
+      config
     );
 
     dispatch(userDetails(data));
   } catch (error) {
-    console.error('Error updating profile:', error);
+    console.error("Error updating profile:", error);
   }
 };
 
@@ -38,21 +42,30 @@ export const updateUserProfile = (userr) => async (dispatch, getState) => {
     const { token } = user;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
     const { data } = await axios.put(
-      'http://127.0.0.1:8000/api/users/profile/update/',
+      "http://127.0.0.1:8000/api/users/profile/update/",
       userr,
-      config,
+      config
     );
     dispatch(loginSuccess(data));
     dispatch(userDetails(data));
     dispatch(updateUser(data));
-    localStorage.setItem('userInfo', JSON.stringify(data));
+    localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
-    console.error('Error updating profile:', error);
+    console.error("Error updating profile:", error);
+  }
+};
+
+export const savePersonalInfo = (data) => async (dispatch) => {
+  try {
+    dispatch(personalInfo(data));
+    localStorage.setItem("personalInfo", JSON.stringify(data));
+  } catch (error) {
+    console.error("Error saving personal info:", error);
   }
 };
 
@@ -64,23 +77,23 @@ export const updateUserProfileAdmin = (userr) => async (dispatch, getState) => {
     const { token } = user;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
     await axios.put(
       `http://127.0.0.1:8000/api/users/update/${userr.id}/`,
       userr,
-      config,
+      config
     );
     dispatch(getUserDetails(userr.id));
   } catch (error) {
-    console.error('Error updating profile:', error);
+    console.error("Error updating profile:", error);
   }
 };
 
 const profileSlice = createSlice({
-  name: 'profile',
+  name: "profile",
   initialState,
   reducers: {
     userDetails: (state, action) => {
@@ -92,11 +105,17 @@ const profileSlice = createSlice({
     userDetailReset: (state) => {
       state.userDetails = {};
     },
+
+    personalInfo: (state, action) => {
+      state.personalInfo = action.payload;
+    },
   },
 });
 
-export const { userDetails, updateUser, userDetailReset } = profileSlice.actions;
+export const { userDetails, updateUser, userDetailReset, personalInfo } =
+  profileSlice.actions;
 
 export const selectUserDetails = (state) => state.userDetails.userDetails;
+export const selectPersonalInfo = (state) => state.personalInfo.personalInfo;
 
 export default profileSlice.reducer;
