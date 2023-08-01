@@ -74,15 +74,20 @@ const Profile = () => {
   return (
     <>
       <ToastContainer />
-      <div className="bg-[#000] flex flex-col md:flex-row pt-24 px-5 md:px-24 pb-20 gap-10">
-        <div className="bg-[#161616] mx-auto w-[30%] px-10 rounded-lg pb-10">
-          <div className="flex justify-center md:flex-row gap-5 pt-10">
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="name"
-                className="text-white mb-3 uppercase font-bold"
-              >
-                Name
+      <div className="bg-[#fff] pt-10 pb-10 ">
+        <div className="bg-[#f3f8ff] rounded-3xl justify-between  flex flex-col md:flex-row pt-24 mx-10 md:px-24 pb-20 gap-10">
+          <div className=" w-[40%]  px-10 rounded-lg pb-10">
+            <h1 className="text-[#13182f] text-2xl font-bold pt-10">
+              Update profile
+            </h1>
+            <div className="flex justify-center md:flex-row gap-5 pt-10">
+              <div className="flex flex-col w-full">
+                <label
+                  htmlFor="name"
+                  className="text-[#13182f] mb-3  text-xl font-bold"
+                >
+                  Name
+                </label>
                 <input
                   type="text"
                   id="email"
@@ -91,18 +96,18 @@ const Profile = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name.."
-                  className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
+                  className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
                 />
-              </label>
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center md:flex-row gap-5 pt-10">
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="email"
-                className="text-white mb-3 uppercase font-bold"
-              >
-                Email Address
+            <div className="flex justify-center md:flex-row gap-5 pt-10">
+              <div className="flex flex-col w-full">
+                <label
+                  htmlFor="email"
+                  className="text-[#13182f] mb-3  text-xl font-bold"
+                >
+                  Email Address
+                </label>
                 <input
                   type="text"
                   required
@@ -111,18 +116,18 @@ const Profile = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address.."
-                  className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
+                  className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
                 />
-              </label>
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center md:flex-row mt-10 gap-5">
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="password"
-                className="text-white mb-3 uppercase font-bold"
-              >
-                Password
+            <div className="flex justify-center md:flex-row mt-10 gap-5">
+              <div className="flex flex-col w-full">
+                <label
+                  htmlFor="password"
+                  className="text-[#13182f] mb-3  text-xl font-bold"
+                >
+                  Password
+                </label>
                 <input
                   type="password"
                   id="password"
@@ -130,18 +135,18 @@ const Profile = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Your password.."
-                  className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
+                  className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
                 />
-              </label>
+              </div>
             </div>
-          </div>
-          <div className="flex justify-center md:flex-row mt-10 gap-5">
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="confirmPassword"
-                className="text-white mb-3 uppercase font-bold"
-              >
-                Password
+            <div className="flex justify-center md:flex-row mt-10 gap-5">
+              <div className="flex flex-col w-full">
+                <label
+                  htmlFor="confirmPassword"
+                  className="text-[#13182f] mb-3  text-xl font-bold"
+                >
+                  Password
+                </label>
                 <input
                   type="password"
                   id="confirmPassword"
@@ -149,41 +154,50 @@ const Profile = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm your password.."
-                  className="bg-[#161616] text-white border-[grey] border-[1px] rounded-lg p-2 font-medium focus:outline-none focus:border-[#ff4d24]"
+                  className="bg-[#fff]   h-16  rounded-full p-2 font-medium focus:outline-none"
                 />
-              </label>
+              </div>
             </div>
+
+            <button
+              className="w-full mt-10 mb-10 bg-[#3d65ff] text-[#fff] rounded-full py-3 px-5 font-bold h-16 hover:transform hover:scale-105 transition duration-300 ease-in-out"
+              type="submit"
+              onClick={(e) => submitHandler(e)}
+            >
+              <h1 className="font-bold">Update profile</h1>
+            </button>
+          </div>
+          <div>
+            <h1 className="text-[#13182f] text-2xl font-bold pt-10">
+              Personal information
+            </h1>
+            <p className="text-[#13182f] text-xl font-bold pt-10">
+              Full name: {shippingAddress.name}
+            </p>
+            <p className="text-[#13182f] text-xl font-bold pt-10">
+              Clinic: {shippingAddress.clinic}
+            </p>
+            <p className="text-[#13182f] text-xl font-bold pt-10">
+              Medical speciality: {shippingAddress.medicalSpeciality}
+            </p>
+            <p className="text-[#13182f] text-xl font-bold pt-10">
+              Country: {shippingAddress.country}
+            </p>
+            <p className="text-[#13182f] text-xl font-bold pt-10">
+              Preferred language: {paymentMethod.preferredLanguage}
+            </p>
           </div>
 
-          <button
-            className="why-btn  w-full mt-10 mb-10 "
-            type="submit"
-            onClick={(e) => submitHandler(e)}
-          >
-            <h1 className="font-bold">Update profile</h1>
-          </button>
-          <p className="text-[#fff] font-medium">
-            Already have an account?{" "}
-            <Link
-              to={redirect ? `/login?redirect=${redirect}` : "/login"}
-              className="text-[#ff4d24]"
-            >
-              Sign In
-            </Link>
-          </p>
-        </div>
-        <div>
-          <h1 className="text-white">{shippingAddress.name}</h1>
-          <h1 className="text-white">{shippingAddress.clinic}</h1>
-          <h1 className="text-white">{shippingAddress.medicalSpeciality}</h1>
-          <h1 className="text-white">{shippingAddress.country}</h1>
-
-          <h1 className="text-white">{paymentMethod.preferredLanguage}</h1>
-          <ul className="text-white">
-            {paymentMethod.selectedMedicalInterests.map((medicalInterest) => (
-              <li key={medicalInterest}>{medicalInterest}</li>
-            ))}
-          </ul>
+          <div>
+            <h1 className="text-[#13182f] text-2xl font-bold pt-10">
+              Medical interests
+            </h1>
+            <ul className="text-[#13182f] text-xl font-bold pt-10">
+              {paymentMethod.selectedMedicalInterests.map((medicalInterest) => (
+                <li key={medicalInterest}>{medicalInterest}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </>

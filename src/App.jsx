@@ -30,6 +30,10 @@ import PersonalInfo from "./pages/Shipping";
 import ProfileSuccess from "./pages/ProfileSuccess";
 
 import Blog from "./pages/Blog";
+import Introduction from "./components/Introduction";
+import Patient from "./components/Patient";
+import Symptoms from "./components/Symptoms";
+import Results from "./components/Results";
 
 function App() {
   return (
@@ -60,6 +64,10 @@ function App() {
         <Route path="/admin/adverts/:id/edit" element={<AdvertEdit />} />
         <Route path="/news/:id" element={<NewsDetail />} />
         <Route path="/blogs" element={<Blog />} />
+        <Route path="/introduction" element={<Introduction />} />
+        <Route path="/patients" element={<Patient />} />
+        <Route path="/symptoms" element={<Symptoms />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
       <Footer />
     </>

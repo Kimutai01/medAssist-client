@@ -80,14 +80,14 @@ const NavBar = () => {
       className={" w-full   md:px-24"}
     >
       <div className="flex justify-between items-center w-full h-full md:px-4 py-4 px-2 2xl:px-16 rounded">
-        <div className="animate-pulse">
+        <div className="">
           <Link
             className={`text-[#000] font-bold text-3xl ${
               location.pathname === "/blogs" ? "text-white" : linkColor
             }`}
             to="/"
           >
-            MedAssist
+            <span className="text-[#3d65ff]">Med</span>Assist
           </Link>
         </div>
         <div>
@@ -116,7 +116,7 @@ const NavBar = () => {
               <>
                 <li className="hidden md:flex">
                   <Link
-                    to="/symptoms"
+                    to="/introduction"
                     className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
                   >
                     Symptom Checker
@@ -258,7 +258,7 @@ const NavBar = () => {
           <div>
             <div className="flex justify-between items-center w-full mt-3 px-3">
               <Link className="font-bold text-4xl uppercase animate-pulse">
-                Mechanic
+                MedAssist
               </Link>
               <div
                 onClick={handleNav}
