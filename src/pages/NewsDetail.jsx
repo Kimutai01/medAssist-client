@@ -26,7 +26,7 @@ const NewsDetail = () => {
         <img
           src="https://images.unsplash.com/photo-1576765974277-be5f035d4604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWZyaWNhbiUyMGRvY3RvciUyMHRyZWF0aW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
           alt="doctor"
-          className="w-full  object-cover"
+          className="w-full  object-cover h-[600px]"
         />
       </div>
       <div className="flex flex-col px-5 pb-10 md:flex-row-reverse bg-[#fff] gap-10 pt-36 pr-10">
@@ -158,7 +158,7 @@ const NewsDetail = () => {
                 </h1>
                 <p className="mt-3">
                   <span className="text-[#666e82] font-medium  text-lg">
-                    12 Oct 2021
+                    29 July, 2023
                   </span>
                 </p>
               </div>
@@ -171,11 +171,11 @@ const NewsDetail = () => {
               />
               <div className="ml-5">
                 <h1 className="text-[#13182f] text-xl font-extrabold">
-                  Sickle cell disease all you need to know
+                  Laproscopic surgery for children
                 </h1>
                 <p className="mt-3">
                   <span className="text-[#666e82] font-medium  text-lg">
-                    12 Oct 2021
+                    29 July, 2023
                   </span>
                 </p>
               </div>

@@ -104,14 +104,7 @@ const NavBar = () => {
                 Blogs
               </Link>
             </li>
-            <li className="hidden md:flex">
-              <Link
-                to="/newss"
-                className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
-              >
-                News
-              </Link>
-            </li>
+
             {user && (
               <>
                 <li className="hidden md:flex">

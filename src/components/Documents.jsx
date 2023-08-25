@@ -22,7 +22,7 @@ const Documents = () => {
       <h1 className="font-bold text-3xl text-center mt-10">
         Upload medical literature or research papers
       </h1>
-      <div className="bg-[#f3f8ff] mx-auto w-[85%] md:w-[50%] px-10 rounded-lg pb-10">
+      <div className="bg-[#f3f8ff] mt-10 mx-auto w-[85%] md:w-[50%] px-10 rounded-lg pb-10">
         <div className="flex justify-center md:flex-row gap-5 pt-10">
           <div className="flex flex-col w-full">
             <label
@@ -45,7 +45,7 @@ const Documents = () => {
 
         <img
           src={team1Photo ? team1Photo : gif}
-          className="h-[200px] w-[200px] object-cover rounded-full"
+          className="h-[200px] w-[200px] object-cover rounded-full pt-5"
           alt="photo"
         />
       </div>
