@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const advertsUrl = 'http://127.0.0.1:8000/api/adverts';
+const advertsUrl = 'http://127.0.0.1:8001/api/adverts';
 const initialState = {
   adverts: [],
   status: 'idle',

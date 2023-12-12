@@ -72,7 +72,7 @@ const ProductEdit = () => {
       };
 
       const { data } = await axios.post(
-        'http://127.0.0.1:8000/api/products/upload/',
+        'http://127.0.0.1:8001/api/products/upload/',
         formData,
         config,
       );
@@ -153,7 +153,7 @@ const ProductEdit = () => {
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <img
-              src={`http://127.0.0.1:8000//${image}`}
+              src={`http://127.0.0.1:8001/${image}`}
               alt=""
               className="h-20 w-20"
             />
