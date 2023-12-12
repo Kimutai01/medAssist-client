@@ -8,43 +8,43 @@ const Waitlist = () => {
         <h2 class="text-2xl text-[#4b81fb] font-bold mb-4 uppercase">
           Join the Waitlist
         </h2>
-        <div class="flex gap-20 justify-between items-center">
+        <div class="flex flex-wrap md:flex-nowrap gap-20 justify-center md:justify-between items-center">
           <div class="w-[50%]">
             <img src={female} alt="" />
           </div>
-          <div class="w-[50%]">
+          <div class="w-[80%] md:w-[50%] flex flex-col justify-center">
             <form action="" method="POST" class="flex flex-col">
-              <div class="flex gap-3">
+              <div class="w-[80vw] md:w-[100%] flex flex-wrap md:flex-nowrap gap-3">
                 <input
                   type="text"
                   placeholder="Enter your first name"
                   name="first_name"
-                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 w-[100%]"
+                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 w-[80vw] md:w-[100%] "
                 />
                 <input
                   type="text"
                   placeholder="Enter your last name"
                   name="last_name"
-                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 w-[100%]"
+                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 w-[80vw] md:w-[100%]"
                 />
               </div>
-              <div class="w-[100%] flex gap-3">
+              <div class="w-[80vw] md:w-[100%] flex gap-3 flex-wrap md:flex-nowrap ">
                 <input
                   type="text"
                   placeholder="Enter your email"
                   name="email"
-                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 mt-5 w-[100%]"
+                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 mt-3 md:mt-5 w-[80vw] md:w-[100%]"
                 />
                 <input
                   type="text"
                   placeholder="Enter your phone number"
                   name="phone_number"
-                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 mt-5 w-[100%]"
+                  class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 mt-3 md:mt-5 w-[80vw] md:w-[100%]"
                 />
               </div>
 
               <select
-                class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 mt-5 w-[100%]"
+                class="border-2 border-[#4b81fb] rounded-lg px-5 py-3 mt-5 w-[80vw] md:w-[100%]"
                 name="profession"
               >
                 <option value="">Select your profession</option>

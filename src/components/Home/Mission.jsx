@@ -3,12 +3,12 @@ import doc from "../../assets/doc.svg";
 
 const Mission = () => {
   return (
-    <div class="flex flex-row-reverse gap-10 pt-20 pr-20 items-center bg-[#f7faff]">
-      <div class="w-[50%] bg-image-container-right">
+    <div class="flex flex-wrap md:flex-nowrap flex-row-reverse gap-10 pt-20 pr-20 items-center bg-[#f7faff]">
+      <div class="w-[90%] md:w-[50%] bg-image-container-right">
         <h2 class="text-2xl text-[#4b81fb] font-bold mb-4 uppercase">
           Our Mission
         </h2>
-        <h2 class="text-5xl font-bold text-[#201e62]">
+        <h2 class="text-xl md:text-5xl font-bold text-[#201e62]">
           Our mission is to make the diagnosis of several faster and more
           accurate and.
         </h2>

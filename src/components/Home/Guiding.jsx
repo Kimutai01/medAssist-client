@@ -12,7 +12,7 @@ const Guiding = () => {
       <h2 class="text-3xl font-extrabold text-[#201e62] w-[50%]">
         Empowering Healthcare with Compassion and Innovation
       </h2>
-      <div class="grid grid-cols-2 gap-10 mt-10">
+      <div class="flex flex-wrap md:grid md:grid-cols-2 gap-10 mt-10">
         <div class="flex gap-5 shadow-lg p-5 rounded-lg bg-image-container-left">
           <img src={care} alt="" />
           <div>

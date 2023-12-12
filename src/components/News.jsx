@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const News = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-5 pt-10 grid-cols-1">
+    <div className="flex flex-wrap md:grid md:grid-cols-2 gap-5 pt-10">
       <Link to="/news/1">
         <div className="bg-[#ffffff] rounded-3xl group overflow-hidden shadow-md">
           <img
@@ -38,7 +38,7 @@ const News = () => {
         </div>
       </Link>
       <Link to="/news/1">
-        <div className="bg-[#ffffff] rounded-3xl group overflow-hidden shadow-md">
+        <div className="bg-[#ffffff] rounded-3xl group overflow-hidden shadow-md min-w-[200px]">
           <img
             src="https://assets.website-files.com/644bde7533aab926a0e2c31f/645b21ea2e6d6fd577f55154_vaccines-protecting-featured-image-doctr-x-webflow-template-p-1080.jpg"
             alt="doctor"

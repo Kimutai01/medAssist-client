@@ -8,7 +8,7 @@ const Hero = () => {
           <h2 className="text-2xl text-[#4b81fb] font-bold mb-4 uppercase">
             About Us
           </h2>
-          <h1 className="text-6xl font-bold text-center text-[#201e62] w-[90%] mx-auto">
+          <h1 className="text-2xl md:text-6xl font-bold text-center text-[#201e62] w-[90%] mx-auto">
             Our mission is to make the diagnosis of several faster and more
             accurate.
           </h1>

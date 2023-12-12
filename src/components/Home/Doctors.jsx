@@ -7,15 +7,15 @@ const Doctors = () => {
     <>
       <div class="bg-blue-500">
         <div class="flex justify-center">
-          <img src={doctors} alt="" class="mt-[-140px]" />
+          <img src={doctors} alt="" class="pt-[20px] md:mt-[-140px]" />
         </div>
       </div>
-      <div class="flex gap-10 pt-20 pl-20 items-center">
-        <div class="w-[50%] bg-image-container-right">
+      <div class="flex flex-wrap md:flex md:flex-nowrap gap-10 pt-20 pl-20 items-center">
+        <div class="w-[90%] md:w-[40%]">
           <h2 class="text-2xl text-[#4b81fb] font-bold mb-4 uppercase">
             Our story
           </h2>
-          <h2 class="text-5xl font-bold text-[#201e62]">
+          <h2 class="text-3xl md:text-5xl font-bold text-[#201e62]">
             MedAssist started in 2023 with one big mission behind
           </h2>
           <p class="mt-10 text-[#73729c] text-lg font-medium">
@@ -37,7 +37,7 @@ const Doctors = () => {
           </p>
         </div>
         <div>
-          <img src={female} alt="" />
+          <img src={female} alt="" class="w-[80%] md:w-[80%]" />
         </div>
       </div>
     </>
