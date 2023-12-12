@@ -55,7 +55,7 @@ const Cart = () => {
               key={item._id}
             >
               <img
-                src={`http://127.0.0.1:8000/${item.image}`}
+                src={`http://127.0.0.1:8001/${item.image}`}
                 alt=""
                 className="h-28 w-28 rounded-md"
               />
