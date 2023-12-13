@@ -10,7 +10,7 @@ const Doctors = () => {
           <img src={doctors} alt="" class="pt-[20px] md:mt-[-140px]" />
         </div>
       </div>
-      <div class="flex flex-wrap md:flex md:flex-nowrap gap-10 pt-20 pl-20 items-center">
+      <div class="flex flex-wrap md:flex md:flex-nowrap gap-10 pt-20 pl-4 md:pl-20 items-center">
         <div class="w-[90%] md:w-[40%]">
           <h2 class="text-2xl text-[#4b81fb] font-bold mb-4 uppercase">
             Our story

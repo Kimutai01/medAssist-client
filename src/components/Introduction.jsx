@@ -11,8 +11,8 @@ const Introduction = () => {
   return (
     <div className="pt-20">
       <SymptomSteps step1 />
-      <div className="flex gap-10 items-center mt-10 px-20">
-        <div className="w-[50%]">
+      <div className="flex flex-wrap md:flex-nowrap gap-10 items-center mt-10 px-4 md:px-20">
+        <div className="w-[100%] md:w-[50%]">
           <h1 className="text-4xl font-bold ">Check the patient's symptoms</h1>
 
           <p className="text-[#73729c] text-lg font-medium mt-10">
@@ -27,7 +27,7 @@ const Introduction = () => {
             Next
           </button>
         </div>
-        <div>
+        <div class="hidden md:flex"> 
           <img src="https://media.istockphoto.com/id/1468514852/vector/male-doctor-in-white-coats-with-stethoscopes-senior-middle-aged-veterans-who-is-fed-up-with.jpg?s=612x612&w=0&k=20&c=K2ESgXfx4jU5_FvzKIkPAZEdH1gSD8y5G-EimRo8FnU=" />
         </div>
       </div>

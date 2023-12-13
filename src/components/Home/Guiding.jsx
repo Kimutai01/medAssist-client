@@ -5,11 +5,11 @@ import care from "../../assets/care.svg";
 
 const Guiding = () => {
   return (
-    <div class="pt-20 px-20">
+    <div class="pt-20 px-4 md:px-20">
       <h2 class="text-2xl text-[#4b81fb] font-bold mb-4 uppercase">
         Our Mission
       </h2>
-      <h2 class="text-3xl font-extrabold text-[#201e62] w-[50%]">
+      <h2 class="text-3xl font-extrabold text-[#201e62] w-[90%] md:w-[50%]">
         Empowering Healthcare with Compassion and Innovation
       </h2>
       <div class="flex flex-wrap md:grid md:grid-cols-2 gap-10 mt-10">

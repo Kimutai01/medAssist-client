@@ -12,7 +12,7 @@ const Hero = () => {
             Our mission is to make the diagnosis of several faster and more
             accurate.
           </h1>
-          <p className="mt-10 text-[#73729c] text-lg font-medium text-center w-[55%] mx-auto">
+          <p className="mt-10 text-[#73729c] text-lg font-medium text-center w-[85%] md:w-[55%] mx-auto">
             We understand the challenges that healthcare professionals face
             daily, including burnout and the need for more efficient tools.
           </p>

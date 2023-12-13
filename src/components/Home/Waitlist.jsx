@@ -9,10 +9,10 @@ const Waitlist = () => {
           Join the Waitlist
         </h2>
         <div class="flex flex-wrap md:flex-nowrap gap-20 justify-center md:justify-between items-center">
-          <div class="w-[50%]">
+          <div class="w-[80%] md:w-[50%]">
             <img src={female} alt="" />
           </div>
-          <div class="w-[80%] md:w-[50%] flex flex-col justify-center">
+          <div class="w-[80%] md:w-[50%] flex flex-col justify-center items-center">
             <form action="" method="POST" class="flex flex-col">
               <div class="w-[80vw] md:w-[100%] flex flex-wrap md:flex-nowrap gap-3">
                 <input
