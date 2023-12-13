@@ -9,15 +9,14 @@ const ProfileSuccess = () => {
           Let's get started!
         </h1>
         <p className="text-[#73729c] text-lg font-medium ">
-          Lorem ipsum dolor sit amet consectetur commodo aliquam augue duis
-          aliquet ipsum donec tempus.
+          You can ask anything about Sickle Cell Disease.
         </p>
         <div className="flex gap-10 mt-10">
           <button className="bg-[#3d65ff] text-white rounded-full px-5 py-2">
             <Link to="/blogs">Check the latest news</Link>
           </button>
           <button className="bg-[#3d65ff] text-white rounded-full px-5 py-2">
-            <Link to="/symptoms">Use the symptom checker</Link>
+            <Link to="/symptoms">Chatbot</Link>
           </button>
         </div>
       </div>

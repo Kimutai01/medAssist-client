@@ -104,17 +104,17 @@ const NavBar = () => {
                 Blogs
               </Link>
             </li>
+            <li className="hidden md:flex">
+              <Link
+                to="/patient"
+                className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
+              >
+                Chatbot
+              </Link>
+            </li>
 
             {user && (
               <>
-                <li className="hidden md:flex">
-                  <Link
-                    to="/introduction"
-                    className=" font-medium text-xl hover:text-[#3d65ff] hover:scale-105 transition-all duration-all hover:border-y-black"
-                  >
-                    Symptom Checker
-                  </Link>
-                </li>
                 <li className="hidden md:flex">
                   <Link
                     to="/documents"
