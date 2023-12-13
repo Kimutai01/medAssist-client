@@ -13,8 +13,8 @@ const Guiding = () => {
         Empowering Healthcare with Compassion and Innovation
       </h2>
       <div class="flex flex-wrap md:grid md:grid-cols-2 gap-10 mt-10">
-        <div class="flex gap-5 shadow-lg p-5 rounded-lg bg-image-container-left">
-          <img src={care} alt="" />
+        <div class="flex flex-wrap md:flex-nowrap gap-5 shadow-lg p-5 rounded-lg md:bg-image-container-left">
+          <img src={care} alt="" class="hidden md:flex" />
           <div>
             <div class="border-b border-gray-400 w-[90%] mt-5">
               <h3 class="font-bold text-3xl text-[#201e62] p-3">Empathy</h3>
@@ -29,8 +29,8 @@ const Guiding = () => {
             </p>
           </div>
         </div>
-        <div class="flex gap-5 shadow-lg p-5 rounded-lg bg-image-container-middle">
-          <img src={respo} alt="" />
+        <div class="flex flex-wrap md:flex-nowrap gap-5 shadow-lg p-5 rounded-lg md:bg-image-container-middle">
+          <img src={respo} alt=""  class="hidden md:flex" />
           <div>
             <div class="border-b border-gray-400 w-[90%] mt-5">
               <h3 class="font-bold text-3xl text-[#201e62] p-3">
@@ -48,8 +48,8 @@ const Guiding = () => {
             </p>
           </div>
         </div>
-        <div class="flex gap-5 shadow-lg p-5 rounded-lg bg-image-container-middle">
-          <img src={acces} alt="" />
+        <div class="flex flex-wrap md:flex-nowrap gap-5 shadow-lg p-5 rounded-lg md:bg-image-container-middle">
+          <img src={acces} alt=""  class="hidden md:flex" />
           <div>
             <div class="border-b border-gray-400 w-[90%] mt-5">
               <h3 class="font-bold text-3xl text-[#201e62] p-3">
@@ -68,8 +68,8 @@ const Guiding = () => {
             </p>
           </div>
         </div>
-        <div class="flex gap-5 shadow-lg p-5 rounded-lg bg-image-container-right">
-          <img src={respo} alt="" />
+        <div class="flex flex-wrap md:flex-nowrap gap-5 shadow-lg p-5 rounded-lg md:bg-image-container-right">
+          <img src={respo} alt=""  class="hidden md:flex" />
           <div>
             <div class="border-b border-gray-400 w-[90%] mt-5">
               <h3 class="font-bold text-3xl text-[#201e62] p-3">
