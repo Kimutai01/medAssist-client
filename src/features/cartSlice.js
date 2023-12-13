@@ -7,7 +7,7 @@ const paymentMethodFromStorage = localStorage.getItem("paymentMethod");
 export const addItemsToCart = (id, qty, size) => async (dispatch, getState) => {
   try {
     const response = await fetch(
-      `https://74ca-105-163-0-112.ngrok-free.app/api/products/${id}`
+      `https://6c9f-105-163-157-191.ngrok-free.app/api/products/${id}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch product data.");
@@ -35,7 +35,7 @@ export const addItemsToCart = (id, qty, size) => async (dispatch, getState) => {
 export const removeItemsFromCart = (id) => async (dispatch, getState) => {
   try {
     const response = await fetch(
-      `https://74ca-105-163-0-112.ngrok-free.app/api/products/${id}`
+      `https://6c9f-105-163-157-191.ngrok-free.app/api/products/${id}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch product data.");

@@ -69,7 +69,7 @@ const ProductDetail = () => {
         <div className="bg-[#000] px-40 pb-20 flex">
           <div className="mr-20 w-[50%]">
             <img
-              src={`https://74ca-105-163-0-112.ngrok-free.app/${product.image}`}
+              src={`https://6c9f-105-163-157-191.ngrok-free.app/${product.image}`}
               alt={product.name}
               className=" w-full rounded-t-lg"
             />

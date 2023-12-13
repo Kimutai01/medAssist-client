@@ -55,7 +55,7 @@ const Cart = () => {
               key={item._id}
             >
               <img
-                src={`https://74ca-105-163-0-112.ngrok-free.app/${item.image}`}
+                src={`https://6c9f-105-163-157-191.ngrok-free.app/${item.image}`}
                 alt=""
                 className="h-28 w-28 rounded-md"
               />

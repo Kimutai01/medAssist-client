@@ -96,7 +96,7 @@ const PlaceOrder = () => {
               >
                 <div className="flex items-center">
                   <img
-                    src={`https://74ca-105-163-0-112.ngrok-free.app/${item.image}`}
+                    src={`https://6c9f-105-163-157-191.ngrok-free.app/${item.image}`}
                     className="w-16 h-16 rounded-lg"
                     alt={item.name}
                   />

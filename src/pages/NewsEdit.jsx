@@ -66,7 +66,7 @@ const NewsEdit = () => {
       };
 
       const { data } = await axios.post(
-        "https://74ca-105-163-0-112.ngrok-free.app/api/news/upload/",
+        "https://6c9f-105-163-157-191.ngrok-free.app/api/news/upload/",
         formData,
         config
       );
@@ -127,7 +127,7 @@ const NewsEdit = () => {
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <img
-              src={`https://74ca-105-163-0-112.ngrok-free.app/${image}`}
+              src={`https://6c9f-105-163-157-191.ngrok-free.app/${image}`}
               alt=""
               className="h-20 w-20"
             />

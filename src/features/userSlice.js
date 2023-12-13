@@ -17,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "https://74ca-105-163-0-112.ngrok-free.app/api/users/login/",
+      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/login/",
       { username: email, password },
       config
     );
@@ -37,7 +37,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "https://74ca-105-163-0-112.ngrok-free.app/api/users/register/",
+      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/register/",
       { name, email, password },
       config
     );
@@ -62,7 +62,7 @@ export const getAllUsers = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "https://74ca-105-163-0-112.ngrok-free.app/api/users/",
+      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/",
       config
     );
     dispatch(getUsers(data));
@@ -83,7 +83,7 @@ export const deleteUserById = (id) => async (dispatch, getState) => {
       },
     };
     await axios.delete(
-      `https://74ca-105-163-0-112.ngrok-free.app/api/users/delete/${id}/`,
+      `https://6c9f-105-163-157-191.ngrok-free.app/api/users/delete/${id}/`,
       config
     );
     dispatch(deleteUser(id));
@@ -100,7 +100,7 @@ export const sendEmail = (name, email, password) => async (dispatch) => {
       },
     };
     await axios.post(
-      "https://74ca-105-163-0-112.ngrok-free.app/api/users/send-email/",
+      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/send-email/",
       { name, email },
       config
     );

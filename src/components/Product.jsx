@@ -5,7 +5,7 @@ const Product = ({ product }) => (
   <div key={product.id} className="bg-[#161616] rounded-lg">
     <Link to={`/product/${product._id}`}>
       <img
-        src={`https://74ca-105-163-0-112.ngrok-free.app/${product.image}`}
+        src={`https://6c9f-105-163-157-191.ngrok-free.app/${product.image}`}
         alt={product.name}
         className="h-72 w-full rounded-t-lg"
       />
