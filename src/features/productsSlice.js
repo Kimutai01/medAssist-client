@@ -1,20 +1,20 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const productsUrl = 'http://127.0.0.1:8001/api/products/';
+const productsUrl = "https://74ca-105-163-0-112.ngrok-free.app/api/products/";
 const initialState = {
   products: [],
-  status: 'idle',
+  status: "idle",
   error: null,
   createdProduct: {},
 };
 
 export const fetchProducts = createAsyncThunk(
-  'products/fetchProducts',
+  "products/fetchProducts",
   async () => {
     const response = await axios.get(productsUrl);
     return response.data;
-  },
+  }
 );
 export const deleteProductById = (id) => async (dispatch, getState) => {
   try {
@@ -31,7 +31,7 @@ export const deleteProductById = (id) => async (dispatch, getState) => {
     dispatch(deleteProduct(id));
     dispatch(fetchProducts());
   } catch (error) {
-    console.error('Error deleting product:', error);
+    console.error("Error deleting product:", error);
   }
 };
 
@@ -43,7 +43,7 @@ export const createNewProduct = () => async (dispatch, getState) => {
     const { token } = user;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
@@ -51,12 +51,12 @@ export const createNewProduct = () => async (dispatch, getState) => {
     dispatch(fetchProducts());
     dispatch(createProduct(data));
   } catch (error) {
-    console.error('Error creating product:', error);
+    console.error("Error creating product:", error);
   }
 };
 
 const productsSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {
     createProduct: (state, action) => {
@@ -67,20 +67,20 @@ const productsSlice = createSlice({
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter(
-        (product) => product.id !== action.payload,
+        (product) => product.id !== action.payload
       );
     },
   },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
-      state.status = 'loading';
+      state.status = "loading";
     },
     [fetchProducts.fulfilled]: (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.products = action.payload;
     },
     [fetchProducts.rejected]: (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.error.message;
     },
   },

@@ -1,29 +1,29 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const advertsUrl = 'http://127.0.0.1:8001/api/adverts';
+const advertsUrl = "https://74ca-105-163-0-112.ngrok-free.app/api/adverts";
 const initialState = {
   adverts: [],
-  status: 'idle',
+  status: "idle",
   error: null,
   createdAdverts: {},
   advert: {},
 };
 
 export const fetchAdverts = createAsyncThunk(
-  'adverts/fetchAdverts',
+  "adverts/fetchAdverts",
   async () => {
     const response = await axios.get(advertsUrl);
     return response.data;
-  },
+  }
 );
 
 export const fetchAdvertsById = createAsyncThunk(
-  'adverts/fetchAdvertsById',
+  "adverts/fetchAdvertsById",
   async (id) => {
     const response = await axios.get(`${advertsUrl}/${id}`);
     return response.data;
-  },
+  }
 );
 
 export const updateAdvertsById = (adverts) => async (dispatch, getState) => {
@@ -34,14 +34,14 @@ export const updateAdvertsById = (adverts) => async (dispatch, getState) => {
     const { token } = user;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
     await axios.put(`${advertsUrl}/update/${adverts._id}/`, adverts, config);
     dispatch(fetchAdverts());
   } catch (error) {
-    console.error('Error updating product:', error);
+    console.error("Error updating product:", error);
   }
 };
 
@@ -60,7 +60,7 @@ export const deleteAdvertsById = (id) => async (dispatch, getState) => {
     dispatch(deleteAdverts(id));
     dispatch(fetchAdverts());
   } catch (error) {
-    console.error('Error deleting product:', error);
+    console.error("Error deleting product:", error);
   }
 };
 
@@ -72,7 +72,7 @@ export const createdNewAdverts = () => async (dispatch, getState) => {
     const { token } = user;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
@@ -80,12 +80,12 @@ export const createdNewAdverts = () => async (dispatch, getState) => {
     dispatch(fetchAdverts());
     dispatch(createAdverts(data));
   } catch (error) {
-    console.error('Error creating product:', error);
+    console.error("Error creating product:", error);
   }
 };
 
 const advertsSlice = createSlice({
-  name: 'adverts',
+  name: "adverts",
   initialState,
   reducers: {
     createAdverts: (state, action) => {
@@ -96,31 +96,31 @@ const advertsSlice = createSlice({
     },
     deleteAdverts: (state, action) => {
       state.adverts = state.adverts.filter(
-        (adverts) => adverts._id !== action.payload,
+        (adverts) => adverts._id !== action.payload
       );
     },
   },
   extraReducers: {
     [fetchAdverts.pending]: (state) => {
-      state.status = 'loading';
+      state.status = "loading";
     },
     [fetchAdverts.fulfilled]: (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.adverts = action.payload;
     },
     [fetchAdverts.rejected]: (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.error.message;
     },
     [fetchAdvertsById.pending]: (state) => {
-      state.status = 'loading';
+      state.status = "loading";
     },
     [fetchAdvertsById.fulfilled]: (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.advert = action.payload;
     },
     [fetchAdvertsById.rejected]: (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.error.message;
     },
   },

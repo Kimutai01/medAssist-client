@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import {
   selectShippingAddress,
   selectCartItems,
   selectPaymentMethod,
-} from '../features/cartSlice';
-import { createOrder, selectOrder, resetOrder } from '../features/orderSlice';
+} from "../features/cartSlice";
+import { createOrder, selectOrder, resetOrder } from "../features/orderSlice";
 
-import CheckoutSteps from '../components/CheckoutSteps';
+import CheckoutSteps from "../components/CheckoutSteps";
 
 const PlaceOrder = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const PlaceOrder = () => {
   };
 
   if (!paymentMethod) {
-    navigate('/payment');
+    navigate("/payment");
   }
 
   const placeOrder = () => {
@@ -40,10 +40,10 @@ const PlaceOrder = () => {
         orderItems: cart,
         shippingAddress,
         paymentMethod,
-      }),
+      })
     );
-    toast.success('Order Placed Successfully', {
-      position: 'top-center',
+    toast.success("Order Placed Successfully", {
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -68,17 +68,8 @@ const PlaceOrder = () => {
               Shipping
             </h1>
             <p className="text-[#fff] text-lg font-medium mt-5 mb-5">
-              Address:
-              {' '}
-              {shippingAddress.address}
-              ,
-              {' '}
-              {shippingAddress.city}
-              ,
-              {' '}
-              {shippingAddress.postalCode}
-              ,
-              {shippingAddress.country}
+              Address: {shippingAddress.address}, {shippingAddress.city},{" "}
+              {shippingAddress.postalCode},{shippingAddress.country}
             </p>
           </div>
           <div className="border-b border-[gray] mt-5">
@@ -86,9 +77,7 @@ const PlaceOrder = () => {
               Payment Method
             </h1>
             <p className="text-[#fff] text-lg font-medium mt-5 mb-5">
-              Method:
-              {' '}
-              {paymentMethod}
+              Method: {paymentMethod}
             </p>
           </div>
           <div className=" mt-5">
@@ -107,7 +96,7 @@ const PlaceOrder = () => {
               >
                 <div className="flex items-center">
                   <img
-                    src={`http://127.0.0.1:8001/${item.image}`}
+                    src={`https://74ca-105-163-0-112.ngrok-free.app/${item.image}`}
                     className="w-16 h-16 rounded-lg"
                     alt={item.name}
                   />
@@ -118,13 +107,7 @@ const PlaceOrder = () => {
                   </div>
                   <div className="flex flex-col ml-5">
                     <h1 className="text-[#fff] text-lg font-medium">
-                      {item.qty}
-                      {' '}
-                      x
-                      {item.price}
-                      {' '}
-                      = $
-                      {item.qty * item.price}
+                      {item.qty} x{item.price} = ${item.qty * item.price}
                     </h1>
                   </div>
                 </div>
@@ -141,36 +124,28 @@ const PlaceOrder = () => {
               <div className="flex justify-between flex-row gap-32 border-b border-[gray] pb-5">
                 <h1 className="text-[#fff] text-lg font-medium">Items</h1>
                 <p className="text-[#fff] text-lg font-medium">
-                  $
-                  {' '}
-                  {order.itemsPrice}
+                  $ {order.itemsPrice}
                 </p>
               </div>
 
               <div className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5">
                 <h1 className="text-[#fff] text-lg font-medium">Shipping</h1>
                 <p className="text-[#fff] text-lg font-medium">
-                  $
-                  {' '}
-                  {order.shippingPrice}
+                  $ {order.shippingPrice}
                 </p>
               </div>
 
               <div className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5">
                 <h1 className="text-[#fff] text-lg font-medium">Tax</h1>
                 <p className="text-[#fff] text-lg font-medium">
-                  $
-                  {' '}
-                  {order.taxPrice}
+                  $ {order.taxPrice}
                 </p>
               </div>
 
               <div className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5">
                 <h1 className="text-[#fff] text-lg font-medium">Total</h1>
                 <p className="text-[#fff] text-lg font-medium">
-                  $
-                  {' '}
-                  {order.totalPrice}
+                  $ {order.totalPrice}
                 </p>
               </div>
               <button

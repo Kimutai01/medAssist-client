@@ -24,7 +24,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `http://127.0.0.1:8001/api/users/${id}/`,
+      `https://74ca-105-163-0-112.ngrok-free.app/api/users/${id}/`,
       config
     );
 
@@ -47,7 +47,7 @@ export const updateUserProfile = (userr) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      "http://127.0.0.1:8001/api/users/profile/update/",
+      "https://74ca-105-163-0-112.ngrok-free.app/api/users/profile/update/",
       userr,
       config
     );
@@ -82,7 +82,7 @@ export const updateUserProfileAdmin = (userr) => async (dispatch, getState) => {
       },
     };
     await axios.put(
-      `http://127.0.0.1:8001/api/users/update/${userr.id}/`,
+      `https://74ca-105-163-0-112.ngrok-free.app/api/users/update/${userr.id}/`,
       userr,
       config
     );

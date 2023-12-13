@@ -17,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "http://127.0.0.1:8001/api/users/login/",
+      "https://74ca-105-163-0-112.ngrok-free.app/api/users/login/",
       { username: email, password },
       config
     );
@@ -37,7 +37,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "http://127.0.0.1:8001/api/users/register/",
+      "https://74ca-105-163-0-112.ngrok-free.app/api/users/register/",
       { name, email, password },
       config
     );
@@ -62,7 +62,7 @@ export const getAllUsers = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "http://127.0.0.1:8001/api/users/",
+      "https://74ca-105-163-0-112.ngrok-free.app/api/users/",
       config
     );
     dispatch(getUsers(data));
@@ -82,7 +82,10 @@ export const deleteUserById = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    await axios.delete(`http://127.0.0.1:8001/api/users/delete/${id}/`, config);
+    await axios.delete(
+      `https://74ca-105-163-0-112.ngrok-free.app/api/users/delete/${id}/`,
+      config
+    );
     dispatch(deleteUser(id));
   } catch (error) {
     console.error("Error deleting user:", error);
@@ -97,7 +100,7 @@ export const sendEmail = (name, email, password) => async (dispatch) => {
       },
     };
     await axios.post(
-      "http://127.0.0.1:8001/api/users/send-email/",
+      "https://74ca-105-163-0-112.ngrok-free.app/api/users/send-email/",
       { name, email },
       config
     );

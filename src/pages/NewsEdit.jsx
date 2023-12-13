@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate, useParams, Link } from 'react-router-dom';
-import axios from 'axios';
-import { selectUser } from '../features/userSlice';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import axios from "axios";
+import { selectUser } from "../features/userSlice";
 import {
   // fetchNews,
   fetchNewsById,
   // selectAllNews,
   selectSingleNews,
   updateNewsById,
-} from '../features/newsSlice';
+} from "../features/newsSlice";
 
 const NewsEdit = () => {
   const { id } = useParams();
-  const [title, setTitle] = useState('');
-  const [image, setImage] = useState('');
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('');
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
   const navigate = useNavigate();
 
@@ -34,41 +34,41 @@ const NewsEdit = () => {
         image,
         category,
         description,
-      }),
+      })
     );
 
-    toast.success('News Updated Successfully', {
-      position: 'top-center',
+    toast.success("News Updated Successfully", {
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       draggable: true,
     });
 
-    navigate('/admin/news');
+    navigate("/admin/news");
   };
   const user = useSelector(selectUser);
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
     const formData = new FormData();
-    formData.append('image', file);
-    formData.append('news_id', id);
+    formData.append("image", file);
+    formData.append("news_id", id);
 
     try {
       setUploading(true);
 
       const config = {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${user.token}`,
         },
       };
 
       const { data } = await axios.post(
-        'http://127.0.0.1:8001/api/news/upload/',
+        "https://74ca-105-163-0-112.ngrok-free.app/api/news/upload/",
         formData,
-        config,
+        config
       );
 
       setImage(data);
@@ -127,7 +127,7 @@ const NewsEdit = () => {
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <img
-              src={`http://127.0.0.1:8001/${image}`}
+              src={`https://74ca-105-163-0-112.ngrok-free.app/${image}`}
               alt=""
               className="h-20 w-20"
             />

@@ -1,26 +1,26 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const newsUrl = 'http://127.0.0.1:8001/api/news';
+const newsUrl = "https://74ca-105-163-0-112.ngrok-free.app/api/news";
 const initialState = {
   news: [],
-  status: 'idle',
+  status: "idle",
   error: null,
   createdNews: {},
   new: {},
 };
 
-export const fetchNews = createAsyncThunk('news/fetchNews', async () => {
+export const fetchNews = createAsyncThunk("news/fetchNews", async () => {
   const response = await axios.get(newsUrl);
   return response.data;
 });
 
 export const fetchNewsById = createAsyncThunk(
-  'news/fetchNewsById',
+  "news/fetchNewsById",
   async (id) => {
     const response = await axios.get(`${newsUrl}/${id}`);
     return response.data;
-  },
+  }
 );
 
 export const updateNewsById = (news) => async (dispatch, getState) => {
@@ -31,14 +31,14 @@ export const updateNewsById = (news) => async (dispatch, getState) => {
     const { token } = user;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
     await axios.put(`${newsUrl}/update/${news._id}/`, news, config);
     dispatch(fetchNews());
   } catch (error) {
-    console.error('Error updating product:', error);
+    console.error("Error updating product:", error);
   }
 };
 
@@ -57,7 +57,7 @@ export const deleteNewsById = (id) => async (dispatch, getState) => {
     dispatch(deleteNews(id));
     dispatch(fetchNews());
   } catch (error) {
-    console.error('Error deleting product:', error);
+    console.error("Error deleting product:", error);
   }
 };
 
@@ -69,7 +69,7 @@ export const createNewNews = () => async (dispatch, getState) => {
     const { token } = user;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
@@ -77,12 +77,12 @@ export const createNewNews = () => async (dispatch, getState) => {
     dispatch(fetchNews());
     dispatch(createNews(data));
   } catch (error) {
-    console.error('Error creating product:', error);
+    console.error("Error creating product:", error);
   }
 };
 
 const newsSlice = createSlice({
-  name: 'news',
+  name: "news",
   initialState,
   reducers: {
     createNews: (state, action) => {
@@ -97,25 +97,25 @@ const newsSlice = createSlice({
   },
   extraReducers: {
     [fetchNews.pending]: (state) => {
-      state.status = 'loading';
+      state.status = "loading";
     },
     [fetchNews.fulfilled]: (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.news = action.payload;
     },
     [fetchNews.rejected]: (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.error.message;
     },
     [fetchNewsById.pending]: (state) => {
-      state.status = 'loading';
+      state.status = "loading";
     },
     [fetchNewsById.fulfilled]: (state, action) => {
-      state.status = 'succeeded';
+      state.status = "succeeded";
       state.new = action.payload;
     },
     [fetchNewsById.rejected]: (state, action) => {
-      state.status = 'failed';
+      state.status = "failed";
       state.error = action.error.message;
     },
   },

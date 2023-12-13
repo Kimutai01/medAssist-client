@@ -20,7 +20,10 @@ const Patient = () => {
     };
 
     try {
-      const response = await axios.post("http://127.0.0.1:7010/chat", payload);
+      const response = await axios.post(
+        "https://86d7-105-163-0-112.ngrok-free.app/chat",
+        payload
+      );
       const responseText = response.data.response;
       const sources =
         response.data.sources

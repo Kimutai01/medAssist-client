@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
-import { addItemsToCart } from '../features/cartSlice';
+import { addItemsToCart } from "../features/cartSlice";
 import {
   getProductsStatus,
   getProductsError,
   selectAllProducts,
   fetchProducts,
-} from '../features/productsSlice';
+} from "../features/productsSlice";
 
 const ProductDetail = () => {
   const navigate = useNavigate();
-  const [size, setSize] = useState('S');
+  const [size, setSize] = useState("S");
 
   const [qty, setQty] = useState(1);
 
@@ -25,13 +25,13 @@ const ProductDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(fetchProducts());
     }
 
-    if (status === 'failed') {
+    if (status === "failed") {
       toast.error(error, {
-        position: 'top-center',
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -48,7 +48,7 @@ const ProductDetail = () => {
     navigate(`/cart/${id}?qty=${qty}`);
   };
 
-  if (status === 'loading' || !product) {
+  if (status === "loading" || !product) {
     return (
       <div className="flex justify-center items-center pt-28 bg-black">
         <div className="w-20 h-20 rounded-full animate-spin border-2 border-solid border-[red] border-t-transparent" />
@@ -69,7 +69,7 @@ const ProductDetail = () => {
         <div className="bg-[#000] px-40 pb-20 flex">
           <div className="mr-20 w-[50%]">
             <img
-              src={`http://127.0.0.1:8001/${product.image}`}
+              src={`https://74ca-105-163-0-112.ngrok-free.app/${product.image}`}
               alt={product.name}
               className=" w-full rounded-t-lg"
             />
@@ -81,10 +81,8 @@ const ProductDetail = () => {
 
             <div>
               <p className="text-[#ff4d23] font-bold text-2xl">
-                {' '}
-                {product.price}
-                {' '}
-                ksh
+                {" "}
+                {product.price} ksh
               </p>
             </div>
 
@@ -94,7 +92,7 @@ const ProductDetail = () => {
             <div className="flex border-[#ff4d23] border-2 justify-between px-3  mt-5 w-3/4">
               <p className="text-[grey] font-bold text-2xl">Status :</p>
               <p className="text-[grey] font-bold text-2xl">
-                {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
               </p>
             </div>
             <div className="flex border-[#ff4d23] border-2 justify-between px-3 mt-5 w-3/4">

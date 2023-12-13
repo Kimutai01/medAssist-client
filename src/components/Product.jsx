@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => (
   <div key={product.id} className="bg-[#161616] rounded-lg">
     <Link to={`/product/${product._id}`}>
       <img
-        src={`http://127.0.0.1:8001/${product.image}`}
+        src={`https://74ca-105-163-0-112.ngrok-free.app/${product.image}`}
         alt={product.name}
         className="h-72 w-full rounded-t-lg"
       />
@@ -16,10 +16,8 @@ const Product = ({ product }) => (
 
         <div>
           <p className="text-[#ff4d23] font-bold text-2xl">
-            {' '}
-            {product.price}
-            {' '}
-            ksh
+            {" "}
+            {product.price} ksh
           </p>
         </div>
         <p className="mt-5 text-[grey] font-medium">{product.description}</p>

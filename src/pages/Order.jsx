@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import {
   markOrderAsDelivered,
   orderDetails,
   selectOrderDetails,
-} from '../features/orderSlice';
+} from "../features/orderSlice";
 
 const Order = () => {
   const dispatch = useDispatch();
@@ -59,45 +59,25 @@ const Order = () => {
       <div className="flex mx-20 mt-10">
         <div>
           <h1 className="uppercase text-[#fff] font-bold text-center text-3xl">
-            Order
-            {' '}
-            {orderDetail._id}
+            Order {orderDetail._id}
           </h1>
           <div className="border-b border-[gray] mt-5">
             <h1 className="uppercase text-[#fff] font-bold text-3xl">
               Shipping
             </h1>
             <p className="text-[#fff] text-lg font-medium mt-5 mb-5">
-              Name:
-              {' '}
-              {orderDetail.user.username}
-              , Email:
-              {' '}
-              {orderDetail.user.email}
+              Name: {orderDetail.user.username}, Email: {orderDetail.user.email}
             </p>
             <p className="text-[#fff] text-lg font-medium mt-5 mb-5">
-              Address:
-              {' '}
-              {orderDetail.ShippingAddress.address}
-              ,
-              {' '}
-              {orderDetail.ShippingAddress.city}
-              ,
-              {' '}
-              {orderDetail.ShippingAddress.postalCode}
-              ,
-              {' '}
+              Address: {orderDetail.ShippingAddress.address},{" "}
+              {orderDetail.ShippingAddress.city},{" "}
+              {orderDetail.ShippingAddress.postalCode},{" "}
               {orderDetail.ShippingAddress.country}
             </p>
 
             {orderDetail.isDelivered ? (
               <p className="text-[green] text-lg font-medium mt-5 mb-5">
-                Delivered at:
-                {' '}
-                {orderDetail.deliveredAt.substring(0, 10)}
-                {' '}
-                time:
-                {' '}
+                Delivered at: {orderDetail.deliveredAt.substring(0, 10)} time:{" "}
                 {orderDetail.deliveredAt.substring(11, 19)}
               </p>
             ) : (
@@ -112,18 +92,11 @@ const Order = () => {
               Payment Method
             </h1>
             <p className="text-[#fff] text-lg font-medium mt-5 mb-5">
-              Method:
-              {' '}
-              {orderDetail.paymentMethod}
+              Method: {orderDetail.paymentMethod}
             </p>
             {orderDetail.isPaid ? (
               <p className="text-[green] text-lg font-medium mt-5 mb-5">
-                Paid at:
-                {' '}
-                {orderDetail.paidAt.substring(0, 10)}
-                {' '}
-                time:
-                {' '}
+                Paid at: {orderDetail.paidAt.substring(0, 10)} time:{" "}
                 {orderDetail.paidAt.substring(11, 19)}
               </p>
             ) : (
@@ -148,7 +121,7 @@ const Order = () => {
               >
                 <div className="flex items-center">
                   <img
-                    src={`http://127.0.0.1:8001/${item.image}`}
+                    src={`https://74ca-105-163-0-112.ngrok-free.app/${item.image}`}
                     className="w-16 h-16 rounded-lg"
                     alt={item.name}
                   />
@@ -159,13 +132,7 @@ const Order = () => {
                   </div>
                   <div className="flex flex-col ml-5">
                     <h1 className="text-[#fff] text-lg font-medium">
-                      {item.qty}
-                      {' '}
-                      x
-                      {item.price}
-                      {' '}
-                      = $
-                      {item.qty * item.price}
+                      {item.qty} x{item.price} = ${item.qty * item.price}
                     </h1>
                   </div>
                 </div>
@@ -186,36 +153,30 @@ const Order = () => {
                   {orderDetail.length === 0
                     ? 0
                     : orderDetail.orders.reduce(
-                      (acc, item) => acc + item.qty * item.price,
-                      0,
-                    )}
+                        (acc, item) => acc + item.qty * item.price,
+                        0
+                      )}
                 </p>
               </div>
 
               <div className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5">
                 <h1 className="text-[#fff] text-lg font-medium">Shipping</h1>
                 <p className="text-[#fff] text-lg font-medium">
-                  {orderDetail.shippingPrice}
-                  {' '}
-                  ksh
+                  {orderDetail.shippingPrice} ksh
                 </p>
               </div>
 
               <div className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5">
                 <h1 className="text-[#fff] text-lg font-medium">Tax</h1>
                 <p className="text-[#fff] text-lg font-medium">
-                  {orderDetail.taxPrice}
-                  {' '}
-                  ksh
+                  {orderDetail.taxPrice} ksh
                 </p>
               </div>
 
               <div className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5">
                 <h1 className="text-[#fff] text-lg font-medium">Total</h1>
                 <p className="text-[#fff] text-lg font-medium">
-                  {orderDetail.totalPrice}
-                  {' '}
-                  ksh
+                  {orderDetail.totalPrice} ksh
                 </p>
               </div>
               {/* <div className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5">
@@ -233,9 +194,9 @@ const Order = () => {
                   </div>
                 )}
               </div> */}
-              {user.isAdmin
-                && orderDetail.isPaid
-                && !orderDetail.isDelivered && (
+              {user.isAdmin &&
+                orderDetail.isPaid &&
+                !orderDetail.isDelivered && (
                   <div
                     className="flex justify-between flex-row mt-5 gap-32 border-b border-[gray] pb-5"
                     onClick={handleDeliver}
@@ -244,7 +205,7 @@ const Order = () => {
                       <h1 className="font-bold">Mark as Delivered</h1>
                     </button>
                   </div>
-              )}
+                )}
             </div>
           </div>
         </div>

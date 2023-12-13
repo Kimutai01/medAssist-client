@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate, useParams, Link } from 'react-router-dom';
-import axios from 'axios';
-import { selectUser } from '../features/userSlice';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import axios from "axios";
+import { selectUser } from "../features/userSlice";
 
 import {
   fetchProduct,
   selectProduct,
   updateProductById,
-} from '../features/productSlice';
+} from "../features/productSlice";
 
 const ProductEdit = () => {
   const { id } = useParams();
 
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
-  const [image, setImage] = useState('');
-  const [category, setCategory] = useState('');
-  const [brand, setBrand] = useState('');
-  const [countInStock, setCountInStock] = useState('');
-  const [description, setDescription] = useState('');
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+  const [category, setCategory] = useState("");
+  const [brand, setBrand] = useState("");
+  const [countInStock, setCountInStock] = useState("");
+  const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
 
   const navigate = useNavigate();
@@ -40,41 +40,41 @@ const ProductEdit = () => {
         brand,
         countInStock,
         description,
-      }),
+      })
     );
 
-    toast.success('Product Updated Successfully', {
-      position: 'top-center',
+    toast.success("Product Updated Successfully", {
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       draggable: true,
     });
 
-    navigate('/admin/products');
+    navigate("/admin/products");
   };
   const user = useSelector(selectUser);
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
     const formData = new FormData();
-    formData.append('image', file);
-    formData.append('product_id', id);
+    formData.append("image", file);
+    formData.append("product_id", id);
 
     try {
       setUploading(true);
 
       const config = {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${user.token}`,
         },
       };
 
       const { data } = await axios.post(
-        'http://127.0.0.1:8001/api/products/upload/',
+        "https://74ca-105-163-0-112.ngrok-free.app/api/products/upload/",
         formData,
-        config,
+        config
       );
 
       setImage(data);
@@ -153,7 +153,7 @@ const ProductEdit = () => {
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <img
-              src={`http://127.0.0.1:8001/${image}`}
+              src={`https://74ca-105-163-0-112.ngrok-free.app/${image}`}
               alt=""
               className="h-20 w-20"
             />
