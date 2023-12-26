@@ -19,7 +19,7 @@ const SymptomSteps = ({ step1, step2 }) => {
             Chatbot
           </Link>
         ) : (
-          <span className="text-gray-500 text-lg font-bold">Patient</span>
+          <span className="text-gray-500 text-lg font-bold">Chatbot</span>
         )}
       </div>
     </div>

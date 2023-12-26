@@ -121,7 +121,7 @@ const Order = () => {
               >
                 <div className="flex items-center">
                   <img
-                    src={`https://6c9f-105-163-157-191.ngrok-free.app/${item.image}`}
+                    src={`http://51.20.67.185/${item.image}`}
                     className="w-16 h-16 rounded-lg"
                     alt={item.name}
                   />

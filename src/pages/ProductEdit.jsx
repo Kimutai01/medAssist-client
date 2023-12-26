@@ -72,7 +72,7 @@ const ProductEdit = () => {
       };
 
       const { data } = await axios.post(
-        "https://6c9f-105-163-157-191.ngrok-free.app/api/products/upload/",
+        "http://51.20.67.185/api/products/upload/",
         formData,
         config
       );
@@ -153,7 +153,7 @@ const ProductEdit = () => {
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <img
-              src={`https://6c9f-105-163-157-191.ngrok-free.app/${image}`}
+              src={`http://51.20.67.185/${image}`}
               alt=""
               className="h-20 w-20"
             />

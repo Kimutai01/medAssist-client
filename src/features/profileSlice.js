@@ -24,7 +24,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `https://6c9f-105-163-157-191.ngrok-free.app/api/users/${id}/`,
+      `http://51.20.67.185/api/users/${id}/`,
       config
     );
 
@@ -47,7 +47,7 @@ export const updateUserProfile = (userr) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/profile/update/",
+      "http://51.20.67.185/api/users/profile/update/",
       userr,
       config
     );
@@ -82,7 +82,7 @@ export const updateUserProfileAdmin = (userr) => async (dispatch, getState) => {
       },
     };
     await axios.put(
-      `https://6c9f-105-163-157-191.ngrok-free.app/api/users/update/${userr.id}/`,
+      `http://51.20.67.185/api/users/update/${userr.id}/`,
       userr,
       config
     );

@@ -4,7 +4,7 @@
 // export const registerUser = (name, email, password) => async (dispatch) => {
 //   try {
 //     const { data } = await axios.post(
-//       "https://6c9f-105-163-157-191.ngrok-free.app/api/users/register",
+//       "http://51.20.67.185/api/users/register",
 //       {
 //         name,
 //         username: email,

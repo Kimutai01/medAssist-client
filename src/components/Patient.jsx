@@ -21,7 +21,7 @@ const Patient = () => {
 
     try {
       const response = await axios.post(
-        "https://5650-105-163-157-191.ngrok-free.app/chat",
+        "http://51.20.92.85/chat",
         payload
       );
       const responseText = response.data.response;
@@ -88,7 +88,9 @@ const Patient = () => {
                               chat.sender === "user" ? "green" : "white"
                             } py-2 px-4 shadow rounded-xl`}
                           >
-                            <div>{chat.text}</div>
+                            <div className="w-[200px] md:w-[400px]">
+                              {chat.text}
+                            </div>
                           </div>
                         </div>
                       </div>

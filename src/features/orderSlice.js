@@ -16,7 +16,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.post(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/orders/add/",
+      "http://51.20.67.185/api/orders/add/",
       order,
       config
     );
@@ -47,7 +47,7 @@ export const orderDetails = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `https://6c9f-105-163-157-191.ngrok-free.app/api/orders/${id}/`,
+      `http://51.20.67.185/api/orders/${id}/`,
       config
     );
 
@@ -75,7 +75,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `https://6c9f-105-163-157-191.ngrok-free.app/api/orders/${id}/pay/`,
+      `http://51.20.67.185/api/orders/${id}/pay/`,
       paymentResult,
       config
     );
@@ -103,7 +103,7 @@ export const listAllOrders = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/orders/myorders",
+      "http://51.20.67.185/api/orders/myorders",
       config
     );
 
@@ -129,7 +129,7 @@ export const getAllOrders = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/orders/",
+      "http://51.20.67.185/api/orders/",
       config
     );
 
@@ -155,7 +155,7 @@ export const markOrderAsDelivered = (id) => async (dispatch, getState) => {
       },
     };
     await axios.put(
-      `https://6c9f-105-163-157-191.ngrok-free.app/api/orders/${id}/deliver/`,
+      `http://51.20.67.185/api/orders/${id}/deliver/`,
       {},
       config
     );

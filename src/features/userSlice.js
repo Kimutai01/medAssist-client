@@ -17,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/login/",
+      "http://51.20.67.185/api/users/login/",
       { username: email, password },
       config
     );
@@ -37,7 +37,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/register/",
+      "http://51.20.67.185/api/users/register/",
       { name, email, password },
       config
     );
@@ -61,10 +61,7 @@ export const getAllUsers = () => async (dispatch, getState) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    const { data } = await axios.get(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/",
-      config
-    );
+    const { data } = await axios.get("http://51.20.67.185/api/users/", config);
     dispatch(getUsers(data));
   } catch (error) {
     console.error("Error getting users:", error);
@@ -82,10 +79,7 @@ export const deleteUserById = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    await axios.delete(
-      `https://6c9f-105-163-157-191.ngrok-free.app/api/users/delete/${id}/`,
-      config
-    );
+    await axios.delete(`http://51.20.67.185/api/users/delete/${id}/`, config);
     dispatch(deleteUser(id));
   } catch (error) {
     console.error("Error deleting user:", error);
@@ -100,7 +94,7 @@ export const sendEmail = (name, email, password) => async (dispatch) => {
       },
     };
     await axios.post(
-      "https://6c9f-105-163-157-191.ngrok-free.app/api/users/send-email/",
+      "http://51.20.67.185/api/users/send-email/",
       { name, email },
       config
     );
