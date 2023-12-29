@@ -9,23 +9,19 @@ const Mission = () => {
           Our Mission
         </h2>
         <h2 class="text-xl md:text-5xl font-bold text-[#201e62]">
-          Our mission is to make the diagnosis of several faster and more
-          accurate and.
+          Our mission is to empower comunity health workers with information about sickle cell disease in Africa
         </h2>
         <p class="mt-10 text-[#73729c] text-lg font-medium">
-          Our mission is simple yet ambitious: to provide doctors with an
+          Our mission is simple yet ambitious: to provide community health workers with an
           indispensable tool that empowers them to make faster, more accurate
-          diagnoses, leading to better patient care and treatment. We aimed to
-          reduce the stress and burnout experienced by healthcare professionals
-          by offering a supportive and reliable platform that complements their
-          expertise.
+          decisions, leading to better patient care and treatment.
         </p>
 
         <p class="mt-10 mb-10 text-[#73729c] text-lg font-medium">
           From the very beginning, innovation has been at the heart of
           MedAssist. We invested countless hours in research, development, and
           collaboration with medical experts to craft an app that seamlessly
-          integrates into the lives of doctors. Leveraging cutting-edge
+          integrates into the lives of community health workers. Leveraging cutting-edge
           technology, including artificial intelligence and machine learning, we
           built a platform that constantly evolves and adapts to meet the
           dynamic needs of the medical community.

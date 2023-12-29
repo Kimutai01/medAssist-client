@@ -30,7 +30,7 @@ const Guiding = () => {
           </div>
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-5 shadow-lg p-5 rounded-lg md:bg-image-container-middle">
-          <img src={respo} alt=""  class="hidden md:flex" />
+          <img src={respo} alt="" class="hidden md:flex" />
           <div>
             <div class="border-b border-gray-400 w-[90%] mt-5">
               <h3 class="font-bold text-3xl text-[#201e62] p-3">
@@ -40,16 +40,16 @@ const Guiding = () => {
             <p class="mt-5 text-[#73729c] text-lg font-medium">
               We take our responsibility to the healthcare community seriously.
               MedAssist is built on a foundation of trust and reliability. We
-              hold ourselves accountable for providing doctors with accurate
-              diagnostic assistance and supporting them in their pursuit of
-              better patient outcomes. Our commitment to responsibility drives
-              us to constantly improve and deliver solutions that meet the
-              highest standards of quality and ethics.
+              hold ourselves accountable for providing community health workers
+              with accurate information that enables them to make informed
+              decisions. Our commitment to responsibility drives us to
+              constantly improve and deliver solutions that meet the highest
+              standards of quality and ethics.
             </p>
           </div>
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-5 shadow-lg p-5 rounded-lg md:bg-image-container-middle">
-          <img src={acces} alt=""  class="hidden md:flex" />
+          <img src={acces} alt="" class="hidden md:flex" />
           <div>
             <div class="border-b border-gray-400 w-[90%] mt-5">
               <h3 class="font-bold text-3xl text-[#201e62] p-3">
@@ -58,18 +58,17 @@ const Guiding = () => {
             </div>
             <p class="mt-5 text-[#73729c] text-lg font-medium">
               Our dedication to care is evident in every aspect of MedAssist. We
-              are committed to offering healthcare professionals a seamless and
-              intuitive platform that enriches their practice. MedAssist is
-              designed with attention to detail, ensuring a user-friendly
-              experience for doctors and patients alike. With a focus on
-              exceptional service, we prioritize the needs of our users,
-              providing them with the best tools to deliver top-notch medical
-              care.
+              are committed to offering the highest level of service to our
+              users and partners. We strive to provide a seamless experience
+              that enables community health workers to focus on what matters
+              most: delivering quality care to patients. We are proud to offer
+              exceptional service and support to our users, ensuring that they
+              have the best possible experience with MedAssist.
             </p>
           </div>
         </div>
         <div class="flex flex-wrap md:flex-nowrap gap-5 shadow-lg p-5 rounded-lg md:bg-image-container-right">
-          <img src={respo} alt=""  class="hidden md:flex" />
+          <img src={respo} alt="" class="hidden md:flex" />
           <div>
             <div class="border-b border-gray-400 w-[90%] mt-5">
               <h3 class="font-bold text-3xl text-[#201e62] p-3">
@@ -79,11 +78,9 @@ const Guiding = () => {
             <p class="mt-5 text-[#73729c] text-lg font-medium">
               We believe that cutting-edge healthcare technology should be
               accessible to all. MedAssist is designed to seamlessly integrate
-              into existing medical workflows, ensuring that doctors can easily
-              adopt and benefit from our app. Our commitment to accessibility
-              extends beyond technology to support and guidance for users at
-              every step. Together, we strive to create a healthcare landscape
-              that is inclusive, efficient, and accessible to all.
+              into existing medical workflows, ensuring that community health
+              workers can easily adopt and use the platform. We are committed to
+              providing affordable solutions that empower community health
             </p>
           </div>
         </div>
