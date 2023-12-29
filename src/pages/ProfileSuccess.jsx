@@ -16,7 +16,7 @@ const ProfileSuccess = () => {
             <Link to="/blogs">Check the latest news</Link>
           </button>
           <button className="bg-[#3d65ff] text-white rounded-full px-5 py-2">
-            <Link to="/symptoms">Chatbot</Link>
+            <Link to="/patients">Chatbot</Link>
           </button>
         </div>
       </div>

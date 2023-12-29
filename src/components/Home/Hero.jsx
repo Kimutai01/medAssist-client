@@ -9,7 +9,7 @@ const Hero = () => {
             About Us
           </h2>
           <h1 className="text-2xl md:text-6xl font-bold text-center text-[#201e62] w-[90%] mx-auto">
-            Our mission is to make the Empower community health in Africa
+            Our mission is to Empower community health workers in Africa
           </h1>
           <p className="mt-10 text-[#73729c] text-lg font-medium text-center w-[85%] md:w-[55%] mx-auto">
             We understand the challenges that community health workers face in

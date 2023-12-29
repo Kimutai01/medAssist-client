@@ -267,6 +267,12 @@ const NavBar = () => {
                 <Link to="/" onClick={handleNav}>
                   <li className="ml-3 text-xl">Home</li>
                 </Link>
+                <Link to="/blogs" onClick={handleNav}>
+                  <li className="ml-3 text-xl">Blogs</li>
+                </Link>
+                <Link to="/introduction" onClick={handleNav}>
+                  <li className="ml-3 text-xl">Chatbot</li>
+                </Link>
                 <li className="relative">
                   <div
                     className="flex items-center justify-between px-3 py-4 cursor-pointer"
@@ -277,38 +283,8 @@ const NavBar = () => {
                       <BsChevronDown size={25} className={``} />
                     </div>
                   </div>
-                  {showServicesDetails && (
-                    <ul className="left-full bg-[#000] py-2 rounded-lg shadow-lg">
-                      <Link to="/services">
-                        <li
-                          className="text-[#fff] text-xl py-1 px-10 hover:bg-gray-200"
-                          onClick={handleNav}
-                        >
-                          Services
-                        </li>
-                      </Link>
-                      <Link to="/performance" onClick={handleNav}>
-                        <li className="text-[#fff] text-xl py-1 px-10 hover:bg-gray-200">
-                          Service Details
-                        </li>
-                      </Link>
-                    </ul>
-                  )}
                 </li>
-                <Link to="/store" onClick={handleNav}>
-                  <li className="ml-3 text-xl">Store</li>
-                </Link>
-                <Link to="/about" onClick={handleNav}>
-                  <li className="py-4 text-xl ml-3 cursor-pointer">About</li>
-                </Link>
               </ul>
-              <div>
-                <Link to="/contact">
-                  <button className="uppercase text-[#fff] bg-[#808080] rounded-full hover:bg-[#ff4d23] font-bold p-4 mt-10 ml-4">
-                    get an appointment
-                  </button>
-                </Link>
-              </div>
             </div>
           </div>
         </div>
