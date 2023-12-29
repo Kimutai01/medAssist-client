@@ -66,7 +66,7 @@ const NewsEdit = () => {
       };
 
       const { data } = await axios.post(
-        "http://51.20.67.185/api/news/upload/",
+        "https://lipiangoma.co.ke/api/news/upload/",
         formData,
         config
       );
@@ -127,7 +127,7 @@ const NewsEdit = () => {
         <div className="flex justify-center md:flex-row mt-10 gap-5">
           <div className="flex flex-col w-full">
             <img
-              src={`http://51.20.67.185/${image}`}
+              src={`https://lipiangoma.co.ke/${image}`}
               alt=""
               className="h-20 w-20"
             />

@@ -24,7 +24,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `http://51.20.67.185/api/users/${id}/`,
+      `https://lipiangoma.co.ke/api/users/${id}/`,
       config
     );
 
@@ -47,7 +47,7 @@ export const updateUserProfile = (userr) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      "http://51.20.67.185/api/users/profile/update/",
+      "https://lipiangoma.co.ke/api/users/profile/update/",
       userr,
       config
     );
@@ -82,7 +82,7 @@ export const updateUserProfileAdmin = (userr) => async (dispatch, getState) => {
       },
     };
     await axios.put(
-      `http://51.20.67.185/api/users/update/${userr.id}/`,
+      `https://lipiangoma.co.ke/api/users/update/${userr.id}/`,
       userr,
       config
     );

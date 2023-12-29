@@ -17,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "http://51.20.67.185/api/users/login/",
+      "https://lipiangoma.co.ke/api/users/login/",
       { username: email, password },
       config
     );
@@ -37,7 +37,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "http://51.20.67.185/api/users/register/",
+      "https://lipiangoma.co.ke/api/users/register/",
       { name, email, password },
       config
     );
@@ -61,7 +61,10 @@ export const getAllUsers = () => async (dispatch, getState) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    const { data } = await axios.get("http://51.20.67.185/api/users/", config);
+    const { data } = await axios.get(
+      "https://lipiangoma.co.ke/api/users/",
+      config
+    );
     dispatch(getUsers(data));
   } catch (error) {
     console.error("Error getting users:", error);
@@ -79,7 +82,10 @@ export const deleteUserById = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    await axios.delete(`http://51.20.67.185/api/users/delete/${id}/`, config);
+    await axios.delete(
+      `https://lipiangoma.co.ke/api/users/delete/${id}/`,
+      config
+    );
     dispatch(deleteUser(id));
   } catch (error) {
     console.error("Error deleting user:", error);
@@ -94,7 +100,7 @@ export const sendEmail = (name, email, password) => async (dispatch) => {
       },
     };
     await axios.post(
-      "http://51.20.67.185/api/users/send-email/",
+      "https://lipiangoma.co.ke/api/users/send-email/",
       { name, email },
       config
     );

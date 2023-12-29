@@ -121,7 +121,7 @@ const Order = () => {
               >
                 <div className="flex items-center">
                   <img
-                    src={`http://51.20.67.185/${item.image}`}
+                    src={`https://lipiangoma.co.ke/${item.image}`}
                     className="w-16 h-16 rounded-lg"
                     alt={item.name}
                   />
