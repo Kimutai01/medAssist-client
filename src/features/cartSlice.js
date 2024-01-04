@@ -6,7 +6,9 @@ const paymentMethodFromStorage = localStorage.getItem("paymentMethod");
 
 export const addItemsToCart = (id, qty, size) => async (dispatch, getState) => {
   try {
-    const response = await fetch(`https://lipiangoma.co.ke/api/products/${id}`);
+    const response = await fetch(
+      `https://api.lipiangoma.co.ke/api/products/${id}`
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch product data.");
     }
@@ -32,7 +34,9 @@ export const addItemsToCart = (id, qty, size) => async (dispatch, getState) => {
 
 export const removeItemsFromCart = (id) => async (dispatch, getState) => {
   try {
-    const response = await fetch(`https://lipiangoma.co.ke/api/products/${id}`);
+    const response = await fetch(
+      `https://api.lipiangoma.co.ke/api/products/${id}`
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch product data.");
     }

@@ -61,7 +61,6 @@ const Patient = () => {
               <div className="flex flex-col h-full overflow-x-auto mb-4">
                 <div className="flex flex-col h-full">
                   <div className="grid grid-cols-12 gap-y-2">
-                    {/* Chat history and API response display */}
                     {chatHistory.map((chat, index) => (
                       <div
                         key={index}
@@ -105,7 +104,6 @@ const Patient = () => {
                   </div>
                 </div>
               </div>
-              {/* Input and send button */}
               <div className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4">
                 <div className="flex-grow ml-4">
                   <div className="relative w-full">
@@ -119,6 +117,7 @@ const Patient = () => {
                       onClick={submitHandler}
                       className="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600"
                     >
+                      {/* Send icon */}
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -143,6 +142,7 @@ const Patient = () => {
                   >
                     <span>Send</span>
                     <span className="ml-2">
+                      {/* Send icon */}
                       <svg
                         className="w-4 h-4 transform rotate-45 -mt-px"
                         fill="none"

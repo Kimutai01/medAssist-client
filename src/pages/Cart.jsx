@@ -55,7 +55,7 @@ const Cart = () => {
               key={item._id}
             >
               <img
-                src={`https://lipiangoma.co.ke/${item.image}`}
+                src={`https://api.lipiangoma.co.ke/${item.image}`}
                 alt=""
                 className="h-28 w-28 rounded-md"
               />

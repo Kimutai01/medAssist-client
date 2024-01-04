@@ -16,7 +16,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.post(
-      "https://lipiangoma.co.ke/api/orders/add/",
+      "https://api.lipiangoma.co.ke/api/orders/add/",
       order,
       config
     );
@@ -47,7 +47,7 @@ export const orderDetails = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `https://lipiangoma.co.ke/api/orders/${id}/`,
+      `https://api.lipiangoma.co.ke/api/orders/${id}/`,
       config
     );
 
@@ -75,7 +75,7 @@ export const payOrder = (id, paymentResult) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `https://lipiangoma.co.ke/api/orders/${id}/pay/`,
+      `https://api.lipiangoma.co.ke/api/orders/${id}/pay/`,
       paymentResult,
       config
     );
@@ -103,7 +103,7 @@ export const listAllOrders = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "https://lipiangoma.co.ke/api/orders/myorders",
+      "https://api.lipiangoma.co.ke/api/orders/myorders",
       config
     );
 
@@ -129,7 +129,7 @@ export const getAllOrders = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "https://lipiangoma.co.ke/api/orders/",
+      "https://api.lipiangoma.co.ke/api/orders/",
       config
     );
 
@@ -155,7 +155,7 @@ export const markOrderAsDelivered = (id) => async (dispatch, getState) => {
       },
     };
     await axios.put(
-      `https://lipiangoma.co.ke/api/orders/${id}/deliver/`,
+      `https://api.lipiangoma.co.ke/api/orders/${id}/deliver/`,
       {},
       config
     );

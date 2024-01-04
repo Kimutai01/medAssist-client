@@ -8,7 +8,7 @@ const SingleNews = ({ singleNews }) => {
         <div class=" h-28 md:h-40  sm:h-30 lg:rounded-t-none lg:rounded-l md:text-center overflow-hidden">
           {/* <%= image_tag(news.image, class: "w-28 md:w-96 h-28 md:h-40 ") %> */}
           <img
-            src={`https://lipiangoma.co.ke/${singleNews.image}`}
+            src={`https://api.lipiangoma.co.ke/${singleNews.image}`}
             alt=""
             className="w-28 md:w-96 h-28 md:h-40 "
           />

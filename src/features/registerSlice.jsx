@@ -4,7 +4,7 @@
 // export const registerUser = (name, email, password) => async (dispatch) => {
 //   try {
 //     const { data } = await axios.post(
-//       "https://lipiangoma.co.ke/api/users/register",
+//       "https://api.lipiangoma.co.ke/api/users/register",
 //       {
 //         name,
 //         username: email,
