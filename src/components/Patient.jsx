@@ -6,7 +6,10 @@ import axios from "axios";
 const Patient = () => {
   const [userInput, setUserInput] = useState("");
   const [chatHistory, setChatHistory] = useState([
-    { text: "Hi there! How can I assist you today?", sender: "bot" },
+    {
+      text: "Hi there! I am Mueni, an AI assistant created by MedAssist. My role is to empower Community Health Workers, households, and communities by providing access to healthcare information and resources. How can I assist you today?",
+      sender: "bot",
+    },
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -65,10 +68,12 @@ const Patient = () => {
                       <div
                         key={index}
                         className={`col-start-${
-                          chat.sender === "user" ? "6" : "1"
+                          chat.sender === "user" ? "7" : "1"
                         } col-end-${
                           chat.sender === "user" ? "13" : "8"
-                        } p-3 rounded-lg`}
+                        } p-3 rounded-lg ${
+                          chat.sender === "user" ? "mt-20" : ""
+                        }`}
                       >
                         <div
                           className={`flex flex-row items-center ${
