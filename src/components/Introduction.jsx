@@ -18,9 +18,8 @@ const Introduction = () => {
           </h1>
 
           <p className="text-[#73729c] text-lg font-medium mt-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            voluptatum, quibusdam, quia, quod voluptates voluptatem quos
-            doloribus quas voluptatem quidem.
+            This chatbot is designed to provide you with information about
+            sickle cell disease.
           </p>
           <button
             className="bg-[#3d65ff] text-[#ffffff] font-medium text-lg py-3 px-10 rounded-md mt-10"
