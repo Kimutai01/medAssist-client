@@ -24,7 +24,7 @@ const Patient = () => {
 
     try {
       const response = await axios.post(
-        "https://5d2e-105-161-225-48.ngrok-free.app/chat",
+        "https://9e25-105-163-2-229.ngrok-free.app",
         payload
       );
       const responseText = response.data.response;
