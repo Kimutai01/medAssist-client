@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const productsUrl = "https://api.lipiangoma.co.ke/api/products/";
+const productsUrl = "http://127.0.0.1:9000//api/products/";
 const initialState = {
   product: null,
   status: "idle",

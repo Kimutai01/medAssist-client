@@ -17,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "https://api.lipiangoma.co.ke/api/users/login/",
+      "http://127.0.0.1:9000//api/users/login/",
       { username: email, password },
       config
     );
@@ -37,7 +37,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "https://api.lipiangoma.co.ke/api/users/register/",
+      "http://127.0.0.1:9000//api/users/register/",
       { name, email, password },
       config
     );
@@ -62,7 +62,7 @@ export const getAllUsers = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      "https://api.lipiangoma.co.ke/api/users/",
+      "http://127.0.0.1:9000//api/users/",
       config
     );
     dispatch(getUsers(data));
@@ -83,7 +83,7 @@ export const deleteUserById = (id) => async (dispatch, getState) => {
       },
     };
     await axios.delete(
-      `https://api.lipiangoma.co.ke/api/users/delete/${id}/`,
+      `http://127.0.0.1:9000//api/users/delete/${id}/`,
       config
     );
     dispatch(deleteUser(id));
@@ -100,7 +100,7 @@ export const sendEmail = (name, email, password) => async (dispatch) => {
       },
     };
     await axios.post(
-      "https://api.lipiangoma.co.ke/api/users/send-email/",
+      "http://127.0.0.1:9000//api/users/send-email/",
       { name, email },
       config
     );

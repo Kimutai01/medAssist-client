@@ -24,7 +24,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `https://api.lipiangoma.co.ke/api/users/${id}/`,
+      `http://127.0.0.1:9000//api/users/${id}/`,
       config
     );
 
@@ -47,7 +47,7 @@ export const updateUserProfile = (userr) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      "https://api.lipiangoma.co.ke/api/users/profile/update/",
+      "http://127.0.0.1:9000//api/users/profile/update/",
       userr,
       config
     );
@@ -82,7 +82,7 @@ export const updateUserProfileAdmin = (userr) => async (dispatch, getState) => {
       },
     };
     await axios.put(
-      `https://api.lipiangoma.co.ke/api/users/update/${userr.id}/`,
+      `http://127.0.0.1:9000//api/users/update/${userr.id}/`,
       userr,
       config
     );

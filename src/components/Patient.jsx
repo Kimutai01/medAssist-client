@@ -24,7 +24,7 @@ const Patient = () => {
 
     try {
       const response = await axios.post(
-        "https://chat.lipiangoma.co.ke/chat",
+        "https://dfcf-105-161-225-48.ngrok-free.app/chat",
         payload
       );
       const responseText = response.data.response;
